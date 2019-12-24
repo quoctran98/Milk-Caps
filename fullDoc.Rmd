@@ -1,0 +1,100 @@
+---
+title: "What factors contribute to milk cap color standardization?"
+author: "Quoc Tran"
+date: "11/26/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(warn=-1)
+```
+
+## Milk cap colors are not standardized.
+
+The colors of the caps on milk cap jugs usually denote the fat content of the milk. In the United States, nearly all large dairies produce milk at four different concentrations of milkfat: whole milk (3.25%), reduced fat milk (2%), low fat milk (1%), and skim or fat free milk (0%). Most milk sold to American consumers in grocery stores come in one gallon plastic jugs. These jugs have plastic screw-top caps in a variety of colors. Among each brand of milk, each product with a different concentration of milkfat will have its cap colored differently. These milk caps, as they will be called from here on out, are meant to denote the milkfat content of each milk jug, but they cannot achieve this with the lack of standardization between different brands of milk. Here we do not seek to make an argument for or against the standardization of milk caps in the United States, but merely to understand the extent to which they are undstandardized and to uncover the reasons for this lack of standardization.
+
+## Data Collection and Cleanup
+
+Originally, we had planned to collect data on milk cap colors, by visiting the websites of various dairies and looking at the color of their milk caps. However, this proved to be extremely tedious. Instead, a [short Google Form](https://forms.gle/XsKdqSNj8ZxnfQaT6) was created and distributed by word of mouth and online, with the the help of Reddit and the subreddits [/r/SampleSize](https://www.reddit.com/r/SampleSize/) and [/r/AskAnAmerican](https://www.reddit.com/r/AskAnAmerican/). The data collected consisted of each participant's ZIP Code, brand of milk, and the cap colors (from a set number of choices) for each milkfat. This survey is not meant to be a sampling survey, but only as a way to crowdsource data. We should be wary of using these data to draw conclusions about larger trends.
+
+We collected over 300 responses from across the United States, though a few were nonsensical and rude. Those responses were removed according to the reasons cited in `dataCleanup/badResponses.csv`. Milk brands were also cleaned up. Responses that did not indicate any specific milk brand were classified as `STORE`. All brands were cut off after the first word, all punctuation was removed, and all letters were capitalized as to make all the responses more uniform and easier to classify. There did not seem to be any loss of precision in milk brand classification using this method. Misspellings and unclear answers were fixed using `dataCleanup/badBrands.csv`. 
+
+```{r}
+source("dataCleanup/dataCleanup.R")
+knitr::kable(head(responses), format = "html")
+```
+
+## Data Exploration
+
+The easiest way to quickly visualize this data is to plot each response on a map corresponding to ZIP Code and with the color corresponding to the color of the milk cap. We can accomplish this using the `zipcode` package to find the latitude and longitude of each ZIP Code, the `mapdata` package for map data, and the `ggplot2` and `ggmap` packages to plot the points. Colors not included in `colorReference.csv` and ZIP Codes not included in `data("zipcode")` were excluded. The function `plotMap` plots each color of milk cap on the map of the contiguous United States by milkfat and by brand.
+
+```{r, message=FALSE}
+library(zipcode)
+library(ggplot2)
+library(ggmap)
+library(mapdata)
+states <- map_data("state")
+data("zipcode")
+source("functions.R")
+
+responses <- merge(responses,zipcode, by="zip")
+colorReference <- read.csv("colorReference.csv", header=FALSE)
+colnames(colorReference) <- c("whole","wholeHex")
+responses <- merge(responses,colorReference, by="whole", all.x=TRUE)
+colnames(colorReference) <- c("reduced","reducedHex")
+responses <- merge(responses,colorReference, by="reduced", all.x=TRUE)
+colnames(colorReference) <- c("low","lowHex")
+responses <- merge(responses,colorReference, by="low", all.x=TRUE)
+colnames(colorReference) <- c("skim","skimHex")
+responses <- merge(responses,colorReference, by="skim", all.x=TRUE)
+colnames(colorReference) <- c("color","hex")
+
+plotMap <- function(milkfat, brandFilt = "showAll") {
+  tempDF <- responses
+  milkfat <- paste(milkfat,"Hex",sep = "")
+  tempDF <- subset(tempDF, tempDF$state != "AK") #remove alaska
+  if (brandFilt != "showAll") {
+    tempDF <- subset(tempDF, brand == brandFilt) #filters the dataset to only include a certain brand
+  }
+  ggplot(data=states) + 
+    geom_polygon(aes(x=long, y=lat, group=group), fill = "gray50", color = "gray60") + 
+    geom_point(data=tempDF, aes(x=longitude, y=latitude), color=tempDF[,milkfat], size=2.5) +
+    coord_fixed(1.3) +
+    guides(fill=FALSE) +
+    theme_nothing() +
+    theme(plot.background = element_rect(fill = "gray30")) +
+    theme(plot.margin = unit(c(2,1,2,1), "cm")) +
+    ggtitle(paste("Distribution of", milkfat, "milk cap colors across the United States"))
+}
+```
+
+Caps on whole milk are mostly red across the United States.
+
+```{r, message=FALSE}
+plotMap("whole")
+```
+
+Caps on reduced fat milk are mostly blue across the United States, but there seems to be less standardization than for whole milk.
+
+```{r, message=FALSE}
+plotMap("reduced")
+```
+
+Caps on low fat milk seem to not be standardized at all, but the prevailing color seems to be light blue. There is a large cluster of light blue dots in the Midwest.
+
+```{r, message=FALSE}
+plotMap("low")
+```
+
+Caps on low fat milk seem to not be standardized at all either, and there seems not to be one prevailing color. There is a large cluster of pink dots in the Midwest.
+
+```{r, message=FALSE}
+plotMap("skim")
+```
+
+
+
+```{r include=FALSE}
+options(warn=0)
+```
