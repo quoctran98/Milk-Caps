@@ -1,3 +1,4 @@
+library(ggplot2)
 getDistProbability <- function(milkfat,milkfatColor,binDistance=25,minBin=20) {
   
   # Importing distCorrelation from distCorrelation.R's exported .csv files
@@ -42,7 +43,7 @@ getDistProbability <- function(milkfat,milkfatColor,binDistance=25,minBin=20) {
   # Graphing
   sameProbability <- mean(distCorrelation$same)*100
   distProbability$probability <- distProbability$probability*100
-  distProbabilityPlot <<- ggplot(distProbability, aes(x=distance, y=probability)) + # Call distProbabilityPlot globally for the ggPlot
+  distProbabilityPlot <<- ggplot(distProbability, aes(x=distance, y=probability)) + # Call distProbabilityPlot globally for the ggPlot (can't do it from inside function?)
     geom_point(colour = milkfatColor, size=3) + 
     geom_hline(yintercept=sameProbability, size=1.5, colour="gray50", linetype="dashed") +
     geom_smooth(method="lm", colour="black") +
