@@ -13,11 +13,13 @@ getDistCorrelation <- function (milkfat) {
   colnames(distCorrelation) <- c("distance","same")
   
   # Finds Haversine distance between every two caps
-  numMax <- (nrow(responses)^2)
+  maxCom <- choose(nrow(responses),2)
+  currCom <- 0
   for (cap1 in 1:(nrow(responses)-1)) { # -1 because the last row doesn't need to be calculated
     cap1row <- responses[cap1,]
     for (cap2 in (cap1+1):nrow(responses)) { # Prevents repeat calculations
-      print(((((cap1-1)*nrow(responses))+cap2)/numMax)*100) # Reports the percentage complete
+      currCom <- currCom + 1
+      print((currCom/maxCom)*100) # Tracks and reports the percentage complete
       cap2row <- responses[cap2,]
       if (cap1row["brand"] != cap2row["brand"]) { # Doesn't count if the two milk caps are from the same brand
         distance <- haversineDist(as.numeric(cap1row["latitude"]),as.numeric(cap1row["longitude"]),as.numeric(cap2row["latitude"]),as.numeric(cap2row["longitude"])) # Haversine distance function in functions.R
@@ -34,4 +36,4 @@ getDistCorrelation <- function (milkfat) {
   write.csv(distCorrelation, paste("visualizations/distCorrelation/distCorrelation/", milkfat, ".csv", sep=""), row.names=FALSE)
 }
 
-getDistCorrelation("skim")
+getDistCorrelation("whole")
