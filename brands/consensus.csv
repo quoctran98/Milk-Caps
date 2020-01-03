@@ -25,13 +25,13 @@
 "24","CUMBERLAND","Red","Light Blue","Dark Blue","Pink","Cumberland Farms, Stewart's,Hannaford, PICs, Thomas, Aldi",1
 "25","DAIRYLAND","Yellow","Pink","Purple","Light Blue","Dairyland",1
 "26","DARIGOLD","Red","Dark Blue",NA,NA,"Darigold",4
-"27","DEANS","Red","Dark Blue",NA,NA,"Deans",12
+"27","DEANS","Red",NA,NA,NA,"Deans",13
 "28","FA!RLIFE","White","White","Red","White","fa!rlife",1
 "29","FAIRLIFE",NA,NA,NA,NA,NA,3
 "30","FARMLAND","Red","Purple","Lime Green","Dark Blue","Farmland Fresh Dairies",1
 "31","FOOD","Red","Dark Blue","Light Blue",NA,"Food World",1
 "32","FRED","Red","Dark Blue","Light Green","Pink","Fred meyer store brand",1
-"33","FRIENDLY","Red","Dark Blue","Light Blue","Pink","Friendly Farms",1
+"33","FRIENDLY","Red","Dark Blue","Light Blue","Pink","Friendly Farms",2
 "34","FRYS","Orange","Dark Blue","Red","Yellow","Frys",1
 "35","GARELICK","Red",NA,NA,"Light Blue",NA,2
 "36","GIANT","Red",NA,NA,NA,NA,10
@@ -39,66 +39,71 @@
 "38","HANNAFORD","Red","Yellow","Light Blue","Lime Green","Hannaford",2
 "39","HARRIS","Red","Dark Blue","Pink","Light Blue","Harris teeter brand ",1
 "40","HEB",NA,NA,NA,NA,"HEB",2
-"41","HILAND","Red","Dark Blue",NA,"Pink","Hiland",4
+"41","HILAND","Red","Dark Blue",NA,"Pink",NA,5
 "42","HILLANDS","Red","Dark Blue","Light Blue",NA,"Hilland’s ",1
 "43","HOMESTEAD","Red",NA,NA,NA,"Homestead Creamery",2
-"44","HOOD","Red","Yellow","Dark Blue",NA,"Hood",8
+"44","HOOD","Red","Yellow","Dark Blue",NA,"Hood",9
 "45","HORIZON",NA,NA,NA,"White",NA,4
 "46","HORNBACHERS","Light Blue","Light Blue","Pink",NA,"Hornbachers",1
 "47","HYVEE","Red",NA,"Light Green",NA,NA,3
-"48","JEWEL",NA,NA,NA,"Pink","Jewel",1
-"49","KEMPS","Red","Dark Blue",NA,"Pink",NA,13
-"50","KIRKLAND",NA,NA,NA,NA,NA,6
-"51","KLEINPETER","Red","Purple","Pink","Light Blue","KLEINPETER",1
-"52","KROGER","Red","Dark Blue",NA,NA,"Kroger",26
-"53","LACTAID",NA,NA,"White",NA,"Lactaid",2
-"54","LAND","Red",NA,NA,NA,NA,2
-"55","LAURA","Red",NA,"Light Blue",NA,NA,2
-"56","LUCERNE","Red",NA,NA,NA,"Lucerne",9
-"57","MARBURGER","Red","Dark Blue","Yellow","Light Blue","Marburger",1
-"58","MARBURGERS","Red","Dark Blue","Yellow","Light Blue","Marburger's",1
-"59","MARKET","Red","Dark Blue","Light Green","Pink","Market Pantry (Target) ",1
-"60","MAYFIELD","Dark Blue","Red","White","Lime Green","Mayfield (Subsidiary of Dean)",1
-"61","MEIJER","Red",NA,NA,NA,"Meijer",6
-"62","MIDLAND","Red","Light Green",NA,"Dark Blue","Midland Farms",1
-"63","MILLKING","Dark Blue",NA,NA,NA,"Mill-King (local Texas creamery)",1
-"64","MODEL","Red",NA,NA,NA,NA,2
-"65","MORNING","Red","Light Blue",NA,NA,"Morning Fresh (local dairy)",1
-"66","MOUNTAIN","Red","Dark Blue","Lime Green","Light Blue","Mountain Dairy",1
-"67","OAKHURST","Red","Purple",NA,"Light Blue","Oakhurst",2
-"68","OATLY",NA,NA,NA,NA,"Oatly",2
-"69","OBERWEIS","Dark Blue","Red",NA,"White","Oberweis ",1
-"70","PRAIRIE","Red","Dark Blue",NA,"Pink","Prairie Farms",7
-"71","PUBLIX","Red","Light Green",NA,"Light Blue",NA,6
-"72","QFC","Red","Dark Blue",NA,NA,"QFC",1
-"73","RALPHS","Red","Light Blue",NA,NA,NA,2
-"74","REITER","Red","Dark Blue","Purple","Pink","Reiter",1
-"75","ROUNDYS","Red","Dark Blue","Yellow","Pink","Roundy’s",1
-"76","SAMS","Red",NA,NA,"Light Green",NA,2
-"77","SASSY","Red","Dark Blue","Light Blue","Pink","Sassy Cow Creamery",1
-"78","SCHNEIDERS","Red","Dark Blue","Lime Green","Purple","Schneider's",1
-"79","SHAMROCK","Red","Orange","Light Blue","Purple","Shamrock",2
-"80","SHOPRITE",NA,NA,NA,NA,NA,3
-"81","SIMPLE","Red","Dark Blue","Purple","Light Blue","Simple Truth Organic (Kroger's organic brand)",1
-"82","STATER","Red","Light Blue","White","White","Stater Bros",1
-"83","STEWARTS","Red",NA,NA,NA,NA,3
-"84","STOP","Red","Light Blue",NA,"Yellow",NA,2
-"85","STORE","Red","Dark Blue",NA,NA,NA,40
-"86","STRAUS","Red","Pink","Orange","Light Blue","Straus",2
-"87","SUPER","Red","Dark Blue","Light Blue","Pink","Super One",1
-"88","TARGET","Red","Dark Blue","Yellow","Pink","Target",1
-"89","TG","Red","Dark Blue","Light Blue","Pink","TG Lee",1
-"90","TOPS","Red","Light Green","Dark Blue","Light Blue","Tops",1
-"91","TRADER","Red","White","Dark Blue","Light Blue",NA,2
-"92","TURNERS","Red","Dark Blue","Lime Green","Light Blue","Turner's",1
-"93","UMPQUA","Red","Dark Blue","Light Blue","White","Umpqua, great value, lucerne. ",1
-"94","UNITED","Red","Dark Blue","Pink",NA,"United Dairy",1
-"95","UPSTATE","Red","Purple",NA,"Light Blue","Upstate Farms",1
-"96","VALUE","Red",NA,"Yellow","Dark Blue","Value Corner",1
-"97","WALMART",NA,"Dark Blue",NA,"Pink",NA,2
-"98","WEGMANS","Red","Purple",NA,"Light Blue",NA,5
-"99","WEIS","Red",NA,NA,"Pink","Weis Market, Turkey Hill. (both store brands)",1
-"100","WELLESLEY","Red","Purple","Light Blue","Pink","Wellesley Farms",1
-"101","WHOLESOME","Red","Pink","Lime Green","Light Green","Wholesome Pantry",1
-"102","WINCO","Red",NA,NA,NA,NA,4
-"103","WOOLWORTHS","Dark Blue",NA,"Red","Lime Green","Woolworths Milk",1
+"48","IGA","Red","Dark Blue","Light Blue","Light Green","IGA",1
+"49","JEWEL",NA,NA,NA,"Pink","Jewel",1
+"50","KEMPS","Red","Dark Blue",NA,"Pink",NA,13
+"51","KIRKLAND",NA,NA,NA,NA,NA,7
+"52","KLEINPETER","Red","Purple","Pink","Light Blue","KLEINPETER",1
+"53","KROGER","Red","Dark Blue",NA,NA,"Kroger",27
+"54","LACTAID",NA,NA,"White",NA,"Lactaid",2
+"55","LAND","Red",NA,NA,NA,NA,2
+"56","LAURA","Red",NA,"Light Blue",NA,NA,2
+"57","LUCERNE","Red",NA,NA,NA,"Lucerne",10
+"58","MARBURGER","Red","Dark Blue","Yellow","Light Blue","Marburger",1
+"59","MARBURGERS","Red","Dark Blue","Yellow","Light Blue","Marburger's",1
+"60","MARKET","Red","Dark Blue","Light Green","Pink","Market Pantry (Target) ",1
+"61","MAYFIELD","Dark Blue","Red","White","Lime Green","Mayfield (Subsidiary of Dean)",1
+"62","MEIJER","Red",NA,NA,NA,"Meijer",6
+"63","MIDLAND","Red","Light Green",NA,"Dark Blue","Midland Farms",1
+"64","MILLKING","Dark Blue",NA,NA,NA,"Mill-King (local Texas creamery)",1
+"65","MODEL","Red",NA,NA,NA,NA,2
+"66","MORNING","Red","Light Blue",NA,NA,"Morning Fresh (local dairy)",1
+"67","MOUNTAIN","Red","Dark Blue","Lime Green","Light Blue","Mountain Dairy",1
+"68","OAKHURST","Red","Purple",NA,"Light Blue","Oakhurst",2
+"69","OATLY",NA,NA,NA,NA,"Oatly",2
+"70","OBERWEIS","Dark Blue","Red",NA,"White","Oberweis ",1
+"71","PRAIRIE","Red","Dark Blue",NA,"Pink","Prairie Farms",7
+"72","PUBLIX","Red","Light Green",NA,"Light Blue",NA,6
+"73","QFC","Red","Dark Blue",NA,NA,"QFC",1
+"74","RALPHS","Red","Light Blue",NA,NA,NA,2
+"75","REITER","Red","Dark Blue","Purple","Pink","Reiter",1
+"76","ROCK","Red","Dark Blue","White","Light Blue","Rock View",1
+"77","ROUNDYS","Red","Dark Blue","Yellow","Pink",NA,2
+"78","SAMS","Red",NA,NA,"Light Green",NA,2
+"79","SASSY","Red","Dark Blue","Light Blue","Pink","Sassy Cow Creamery",1
+"80","SCHNEIDERS","Red","Dark Blue","Lime Green","Purple","Schneider's",1
+"81","SHAMROCK","Red","Orange","Light Blue","Purple","Shamrock",2
+"82","SHOPRITE",NA,NA,NA,NA,NA,3
+"83","SILK","Red","Dark Blue","Light Green","Light Blue","Silk",1
+"84","SIMPLE","Red","Dark Blue","Purple","Light Blue","Simple Truth Organic (Kroger's organic brand)",1
+"85","STATER","Red","Light Blue","White","White","Stater Bros",1
+"86","STEWARTS","Red",NA,NA,NA,NA,3
+"87","STOP","Red","Light Blue",NA,"Yellow",NA,2
+"88","STORE","Red","Dark Blue",NA,NA,NA,40
+"89","STRAUS","Red","Pink","Orange","Light Blue","Straus",2
+"90","SUPER","Red","Dark Blue","Light Blue","Pink","Super One",1
+"91","TARGET","Red","Dark Blue","Yellow","Pink","Target",1
+"92","TG","Red","Dark Blue","Light Blue","Pink","TG Lee",1
+"93","TOPS","Red","Light Green","Dark Blue","Light Blue","Tops",1
+"94","TRADER","Red","White","Dark Blue","Light Blue",NA,2
+"95","TURNERS","Red","Dark Blue","Lime Green","Light Blue","Turner's",1
+"96","UMPQUA","Red","Dark Blue","Light Blue","White","Umpqua, great value, lucerne. ",1
+"97","UNITED","Red","Dark Blue","Pink",NA,"United Dairy",1
+"98","UPSTATE","Red","Purple",NA,"Light Blue","Upstate Farms",1
+"99","VALUE","Red",NA,"Yellow","Dark Blue","Value Corner",1
+"100","VEREQ","White","White","White","White","Vereq",1
+"101","WALMART",NA,"Dark Blue",NA,"Pink",NA,2
+"102","WAWA","Red","Pink","Light Blue","Light Green","Wawa",1
+"103","WEGMANS","Red","Purple",NA,"Light Blue",NA,5
+"104","WEIS","Red",NA,NA,"Pink","Weis Market, Turkey Hill. (both store brands)",1
+"105","WELLESLEY","Red","Purple","Light Blue","Pink","Wellesley Farms",1
+"106","WHOLESOME","Red","Pink","Lime Green","Light Green","Wholesome Pantry",1
+"107","WINCO","Red",NA,NA,NA,NA,4
+"108","WOOLWORTHS","Dark Blue",NA,"Red","Lime Green","Woolworths Milk",1

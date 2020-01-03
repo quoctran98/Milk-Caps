@@ -96,4 +96,4 @@ contingencyTable <- function (milkfats, obsThreshold = 0) {
              main="")
 }
  
-contingencyTable(c("reduced","skim"),2)
+contingencyTable(c("low","skim"),2)

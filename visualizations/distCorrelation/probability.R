@@ -2,7 +2,7 @@ library(ggplot2)
 getDistProbability <- function(milkfat,milkfatColor,binDistance=25,minBin=20) {
   
   # Importing distCorrelation from distCorrelation.R's exported .csv files
-  distCorrelation <- read.csv(paste("visualizations/distCorrelation/distCorrelation/", milkfat, ".csv", sep=""))
+  distCorrelation <- read.csv(paste("visualizations/distCorrelation/savedCorrelation/", milkfat, ".csv", sep=""))
   
   # Populating distCorrelation with bins based on binDistance
   distProbability <- data.frame(NA,NA,NA)
@@ -37,7 +37,7 @@ getDistProbability <- function(milkfat,milkfatColor,binDistance=25,minBin=20) {
   distProbability <- rbind(distProbability,bigBins)
   
   # Exporting the dataframes
-  write.csv(distProbability, paste("visualizations/distCorrelation/distProbability/", milkfat, ".csv", sep=""), row.names=FALSE)
+  write.csv(distProbability, paste("visualizations/distCorrelation/savedProbability/", milkfat, ".csv", sep=""), row.names=FALSE)
   distProbability <<- distProbability
   
   # Graphing

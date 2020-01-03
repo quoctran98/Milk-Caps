@@ -33,7 +33,7 @@ getDistCorrelation <- function (milkfat) {
   
   # Exporting the dataframes
   distCorrelation <<- distCorrelation
-  write.csv(distCorrelation, paste("visualizations/distCorrelation/distCorrelation/", milkfat, ".csv", sep=""), row.names=FALSE)
+  write.csv(distCorrelation, paste("visualizations/distCorrelation/savedCorrelation/", milkfat, ".csv", sep=""), row.names=FALSE)
 }
 
 getDistCorrelation("whole")
