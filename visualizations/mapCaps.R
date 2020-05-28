@@ -14,9 +14,11 @@ plotMap <- function(milkfat, brandFilt=NA, stateFilt=NA) {
   trimmedResponses <- merge(responses,zipcode, by="zip")
   trimmedStates <- states
   
+  trimmedResponses <<- trimmedResponses
+  
   # Filtering the dataset by brandFilt
   if (!is.na(brandFilt)) {
-    tempDF <- subset(tempDF, brand %in% brandFilt)
+    trimmedResponses <- subset(trimmedResponses, brand %in% brandFilt)
   }
   
   # Filtering map data and dataset by statFilT
@@ -37,8 +39,8 @@ plotMap <- function(milkfat, brandFilt=NA, stateFilt=NA) {
     theme(plot.background = element_rect(fill = "gray30"))
 }
 
-plotMap("low", stateFilt=c("wisconsin","indiana","illinois","michigan","ohio","iowa","missouri","kentucky","minnesota"))
-plotMap("skim", stateFilt=c("california",""))
-plotMap("reduced")
-plotMap("low", stateFilt="colorado")
+
 plotMap("skim")
+plotMap("low")
+plotMap("reduced")
+plotMap("whole")

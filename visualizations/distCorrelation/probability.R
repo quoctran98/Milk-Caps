@@ -55,4 +55,10 @@ getDistProbability <- function(milkfat,milkfatColor,binDistance=25,minBin=20) {
 
 getDistProbability("skim","hotpink3")
 distProbabilityPlot
+getDistProbability("low","darkgreen")
+distProbabilityPlot
+getDistProbability("reduced","blue")
+distProbabilityPlot
+getDistProbability("whole","red")
+distProbabilityPlot
 
