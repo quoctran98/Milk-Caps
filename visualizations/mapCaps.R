@@ -1,11 +1,10 @@
-library(zipcode)
 library(ggplot2)
 library(mapdata)
 library(ggmap)
 states <- map_data("state")
 stateAbbre <- read.csv("otherData/abbreviations.csv", header=TRUE)
 stateAbbre$State <- toupper(stateAbbre$State)
-data("zipcode")
+load("./rawData/zipcode.rda") # from https://cran.r-project.org/src/contrib/Archive/zipcode/
 source("functions.R")
 source("rawData/dataCleanup.R")
 

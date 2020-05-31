@@ -1,5 +1,4 @@
-library(zipcode)
-data("zipcode")
+load("./rawData/zipcode.rda") # from https://cran.r-project.org/src/contrib/Archive/zipcode/
 source("functions.R")
 source("rawData/dataCleanup.R")
 

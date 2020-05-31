@@ -1,9 +1,8 @@
 library(stringr)
 library(dplyr)
 library(ggplot2)
-library(zipcode)
 source("rawData/dataCleanup.R")
-data("zipcode")
+load("./rawData/zipcode.rda") # from https://cran.r-project.org/src/contrib/Archive/zipcode/
 responses <- merge(responses,zipcode, by="zip")
 rm(zipcode)
 
